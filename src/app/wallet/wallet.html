@@ -1,0 +1,93 @@
+<div class="wallet-container">
+    <div
+        class="waves-effect waves-light btn"
+        (click)="btnWallet()"
+    >
+        ETH-Wallet
+    </div>
+    <div
+        class="odv odv_closed"
+        #wallet
+    >
+        <h5>Новый кошелек</h5>
+        <div>
+          <input type="text" id="userEntropy" placeholder="Type random text to generate entropy" size="80" />
+          <button
+            class="waves-effect waves-light btn"
+            onclick="newWallet()"
+          >
+            Создать новый кошелек
+          </button>
+        </div>
+
+        <h5>Восстановить кошелек</h5>
+        <div>
+          <input type="text" id="seed" value="" size="80" />
+          <button
+            class="waves-effect waves-light btn"
+            onclick="setSeed()"
+          >
+            Restore wallet from Seed
+          </button>
+        </div>
+
+        <h5>Показать адреса</h5>
+        <div>
+          Show <input type="text" id="numAddr" size="5" value="3" /> more address(es)
+          <button
+            class="waves-effect waves-light btn"
+            onclick="newAddresses('')"
+          >
+            Show
+          </button>
+        </div>
+
+        <div id="addr"></div>
+        <div>
+          <button
+            class="waves-effect waves-light btn"
+            onClick='getBalances()'
+          >
+            Обновить
+          </button>
+        </div>
+
+        <h5>Send Ether</h5>
+        <div>From: <select id="sendFrom"></select></div>
+        <div>To: <input type="text" size="40" id="sendTo" /></div>
+        <div>Ether: <input type="text" id="sendValueAmount" /></div>
+        <div>
+          <button
+            class="waves-effect waves-light btn"
+            onclick="sendEth()"
+          >
+            Send Ether
+          </button>
+        </div>
+
+        <h5>Seed</h5>
+        <button
+          class="waves-effect waves-light btn"
+          onclick="showSeed()"
+        >
+          Показать данные Seed
+        </button>
+
+      <h5>Function Call</h5>
+      <div>Caller: <select id="functionCaller"></select></div>
+      <div>Contract Address: <input type="text" size="40" id="contractAddr"/></div>
+      <div>Contract ABI: <input type="text" size="40" id="contractAbi"/></div>
+      <div>Function Name: <input type="text" size="20" id="functionName"/></div>
+      <div>Function Arguments: <input type="text" size="40" id="functionArgs"/></div>
+      <div>Value (Ether): <input type="text" id="sendValueAmount"/></div>
+      <div>
+        <button
+          class="waves-effect waves-light btn"
+          onclick="functionCall()"
+        >
+          Call Function
+        </button>
+      </div>
+
+    </div>
+</div>
